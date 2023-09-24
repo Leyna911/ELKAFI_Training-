@@ -1,13 +1,12 @@
 import { pic1 } from "../Assets";
 import { pic2 } from "../Assets";
 import { formMedic } from "../Assets";
+import { academic } from "../Assets";
+import { medical } from "../Assets";
 
 
 export const navLinks = [
-    {
-        id:"acceuil", 
-        title:"ترحيب"
-    },
+   
     {
         id:"formations", 
         title:"تدريب احترافي"
@@ -15,6 +14,10 @@ export const navLinks = [
     {
         id:"cours", 
         title:"دروس الدعم"
+    },
+    {
+        id:"acceuil", 
+        title:"ترحيب"
     }
 ];
 
@@ -58,7 +61,7 @@ export const cardInfos = [
             'فيزياء',   
             'انجليزية ',
             'تاريخ و جغرافيا ',
-            'فرنسية ',
+            'لغة فرنسية  ',
             'أدب عربي ',
             'هندسة ميكانيكية',
             'هندسة مدنية ',
@@ -66,6 +69,18 @@ export const cardInfos = [
         ]
         
     },
+    {
+        id:'cardfive',
+        pic:pic2,
+        title:"لغات ",
+        text:"المؤسسة متخصصة في تعليم اللغات حيث توفر برامج تعليمية عالمية موجهة لكل الأعمار و الفئات ابتداءا من 6 سنوات التحضير لشهادات عالمية تحت اشراف أساتذة ذو خبرة في التدريس و بعدة طرق" ,       
+        list:[
+            'لغة فرنسية ' ,
+            'لغة انجليزية ',   
+            'لغة اسبانية  ',   
+        ]
+        
+    }
 
 ]
 
@@ -92,4 +107,23 @@ export const cardInfosCours = [
         tutor:"Mehdi Bouhenna "
     },
  
+]
+
+export const services =[
+    {
+        id:1,
+        icon:academic,
+        title:"دروس خصوصية لمختلف المستويات",
+        btn: "اكتشف دروسنا الخصوصية",
+        sectionId:'formations'
+      
+    },
+    {
+        id:2,
+        icon:medical,
+        title:"التدريب المهني مع تسليم الشهادة",
+        btn:" اكتشف دوراتنا التدريبية المهنية",
+        sectionId:'coursParticuliers'
+        
+    }
 ]

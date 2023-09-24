@@ -48,14 +48,12 @@ const Formations = () => {
   return (
     <div>
        <style>{customCarouselStyles}</style>
-     <div className='flex flex-col justify-center items-center'>
-        <h1 className={`${styles.sectionHeadText} `} >اكتسب الثقة وازدهر بجانب الخبراء، وفّر الوقت وابحث عن أفضل المعلمين بأمان </h1>
-      </div>
+    
     
         <Carousel responsive={responsive}>
         {cardInfos.map((info)=>(
-        <div className='ml-2 mr-2'>
-          <div className=" max-w-sm h-[500px] rounded overflow-hidden shadow-lg  ">
+        <div className='ml-2 mr-2 '>
+          <div className=" max-w-sm h-[500px] rounded overflow-hidden shadow-lg hover:drop-shadow-2xl hover:brighteness-150 duration-300 ease-in-out">
               <img className="w-full " src={info.pic} alt={info.title} />     
               <div className="px-6 py-4">
                   <h5 className="font-bold text-[#1A1A1A] text-xl mb-2">{info.title}</h5>

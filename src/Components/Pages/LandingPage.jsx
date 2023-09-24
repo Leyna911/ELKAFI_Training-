@@ -2,19 +2,24 @@ import React from 'react'
 import Hero from '../Hero';
 import WhoAreWe from '../WhoAreWe';
 import Formations from '../Formations';
+import CoursParticuliers from '../CoursParticuliers';
 
 const LandingPage = () => {
   return (
     <div>
-     <section className='py-20'>
+     <section id='acceuil' className='py-20'>
         <Hero/>
      </section> 
-     <section>
+     <section >
         <WhoAreWe/>
      </section>
-     <section>
+     <section id='coursParticuliers'>
+         <CoursParticuliers/>
+     </section>
+     <section id='formations'>
         <Formations/>
      </section>
+    
     </div>
   )
 }
