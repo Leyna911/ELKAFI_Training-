@@ -1,62 +1,259 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRef } from 'react';
+
+import { DatePicker } from '@mui/x-date-pickers';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+
+
+//5_8eoHPj5GL7i6Ivp
+//service_i9mcwnp
+//
+
 
 const RegistrationForm = () => {
+
+  const formRef=useRef(); 
+  const [form,setForm]=useState({
+    name:"",
+    lastName:"",
+    email:"",
+    DOB:"",
+    address:"",
+    service:"",
+  })
+
+  const [selectedService,setSelectedService]=useState("");
+
+
+  const handleServiceChange=(value)=>{
+    setSelectedService(value);
+    setForm({...form, service:value})
+  }
+
+  const handleInputChange=(e)=>{
+    const {name,value} = e.target ; 
+    setForm({...form,[name]:value});
+     
+  }
+ 
+  const handleSubmit=(e)=>{
+      e.preventDefault();
+
+      console.log("form values:", form);
+      console.log("selected service", selectedService)
+
+      if(form.name && form.lastName && form.DOB && form.address && form.email && selectedService){
+        console.log("!التسجيل بنجاح")
+      }else{
+        console.log(".يرجى ملء جميع الحقول المطلوبة")
+      }
+  }
+
+  
+
   return (
-    <div className='flex flex-col my-[180px] justify-center items-center '>
-      <form class="w-full max-w-lg">
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        First Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/>
-      <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-    </div>
-    <div class="w-full md:w-1/2 px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-        Last Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        Password
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="******************"/>
-      <p class="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-2">
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
-        City
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" placeholder="Albuquerque"/>
-    </div>
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
-        State
-      </label>
-      <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-          <option>New Mexico</option>
-          <option>Missouri</option>
-          <option>Texas</option>
-        </select>
-        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+    <div className='flex flex-col my-[180px] text-right justify-center items-center '>
+      <form 
+      ref={formRef}
+      onSubmit={handleSubmit}
+      className="w-full max-w-lg">
+        <div className="flex flex-wrap -mx-3 mb-6">
+          <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <label className="block   text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+            :الإسم 
+            </label>
+            <input 
+            required
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200  rounded py-3 px-4 mb-3  focus:outline-none focus:bg-white" id="grid-first-name" type="text"
+            name='name'
+            value={form.name}
+            onChange={handleInputChange}
+            />
+           
+          </div>
+          <div className="w-full md:w-1/2 px-3">
+            <label className="block  text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
+            اللقب :
+            </label>
+            <input
+            required
+            name='lastName'
+            value={form.lastName}
+            onChange={handleInputChange}
+            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4  focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" />
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
-        Zip
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210"/>
-    </div>
-  </div>
+        <div className="flex flex-col justify-end mb-6">
+          <div className="text-right">
+            <label className="block text-gray-700 text-xs font-bold mb-2">
+              :تاريخ الميلاد 
+            </label>
+          </div>
+          <div className="relative max-w-sm ml-auto">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none">
+              <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+              </svg>
+            </div>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                required  
+                type="text" 
+                name='DOB'
+                value={form.DOB}
+                onChange={(date)=>handleInputChange({target:{name:'DOB',value:date.format("YYYY-MM-DD")}})}
+                className="text-right bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pr-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                placeholder="حدد تاريخ ميلاد"
+              />
+            </LocalizationProvider>
+           
+          </div>
+        </div>
+        <div className='px-3 mb-6 '>
+           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+           :البريد الالكتروني 
+           </label>
+            <input
+              required
+              type='email'
+              name='email'
+              value={form.email}
+              onChange={handleInputChange}
+              placeholder='ما هو بريدك الإلكتروني'
+              className="text-right  appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            />
+          
+        </div>
+        <div className='px-3 mb-6 '>
+           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
+           :العنوان 
+           </label>
+            <input
+              type='text'
+              name='address'
+              value={form.address}
+              onChange={handleInputChange}
+              className="text-right  appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            />
+          
+        </div>
+
+        <div className='mb-6'>
+              <div className='flex flex-row gap-10 justify-end mr-6' >
+                <div className="flex items-center mb-4">
+                  <input 
+                  id="formation" 
+                  type="radio" 
+                  name="service" 
+                  value="التكوينات" 
+                  onChange={()=>handleServiceChange('formation-select')}
+                  className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600" />
+                  
+                  <label 
+                  htmlFor="formation" 
+                  className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  التكوينات
+                  </label>
+                </div>
+
+                <div className="flex items-center mb-4">
+                  <input 
+                  id="courpart" 
+                  type="radio" 
+                  name="service" 
+                  value="دروس خصوصية" 
+                  onChange={()=>handleServiceChange('courpart-select')}
+                  className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
+                  <label htmlFor="courpart" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  دروس خصوصية
+                  </label>
+                </div>
+
+                <div className="flex items-center mb-4">
+                  <input 
+                  id="langues" 
+                  type="radio" 
+                  name="service" 
+                  value="اللغات"
+                  onChange={()=>{handleServiceChange('langues-select')}}
+                   className="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:bg-gray-700 dark:border-gray-600"/>
+                  <label htmlFor="langues" className="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  اللغات
+                  </label>
+                </div>
+              </div>
+           
+
+        </div>
+        {selectedService == 'formation-select' && (
+           <div className='text-right mb-6'>       
+           <label className="service-select block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	التكوين </label>
+           <select 
+           name='service'
+           id="formation" 
+           value={form.service}
+           onChange={handleInputChange}
+           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+             <option>	التكوين في الحجامة </option>
+             <option>التكوين في الإصابات الرياضية </option>
+             <option>	التكوين في الإسعافات الأولية </option>
+           </select>
+       </div>  
+        )}
+        
+        {selectedService == 'courpart-select' && (
+            <div className='text-right mb-6'>       
+            <label className="service-select  block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	درس خصوصي </label>
+            <select
+              name='service'
+              value={form.service}
+              onChange={handleInputChange}
+            id="courpart" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option>   	رياضيات 	السنة الثانية متوسط  </option>
+              <option>  	فيزياء  	السنة الثانية متوسط  </option>
+              <option>	رياضيات 	السنة الرابعة متوسط   </option>
+              <option>   	فيزياء 	السنة الرابعة متوسط </option>
+              <option>    	أدب عربي السنة الرابعة متوسط </option>   
+              <option>  	رياضيات  	الأقسام النهائية    </option>
+              <option>   	فيزياء 	الأقسام النهائية    </option>
+              <option>    انجليزية 	الأقسام النهائية   </option>
+              <option>   	تاريخ و جغرافيا  الأقسام النهائية    </option>
+              <option>   	فرنسية الأقسام النهائية    </option>
+              <option>   	فرنسية 	الأقسام النهائية    </option>
+              <option>   	هندسة ميكانيكية 	الأقسام النهائية    </option>
+              <option>   	هندسة مدنية الأقسام النهائية    </option>
+              <option>   	هندسة كهربائية الأقسام النهائية    </option>
+
+            </select>
+        </div> 
+        )}
+         
+          {selectedService == 'langues-select' && (
+               <div className='text-right mb-6 '>       
+               <label className="service-select  block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	دورات لغة </label>
+               <select 
+               name='service'
+                value={form.service}
+                onChange={handleInputChange}
+               id="langues" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                 <option>	  لغة فرنسية  </option>
+                 <option> لغة انجليزية   </option>
+                 <option>	لغة اسبانية </option>
+                 <option>	 	دروس الدعم في اللغة الانجليزية للأطفال  </option>
+               </select>
+           </div> 
+          )}
+        
+        <button 
+          type='submit'
+          className='border border-[#615dcf] hover:bg-[#5928E5] hover:text-white text-[#5928E5] font-bold py-3 px-5 my-5 rounded'>
+        تسجيل
+        </button>
+
+
+   
+       
 </form>
     </div>
   )
