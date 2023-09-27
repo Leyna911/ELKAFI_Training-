@@ -4,12 +4,11 @@ import { useRef } from 'react';
 import { DatePicker } from '@mui/x-date-pickers';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs'
+import dayjs from 'dayjs';
 
+import emailjs from "@emailjs/browser"
 
-//5_8eoHPj5GL7i6Ivp
-//service_i9mcwnp
-//
-
+import { styles } from '../styles';
 
 const RegistrationForm = () => {
 
@@ -24,6 +23,8 @@ const RegistrationForm = () => {
   })
 
   const [selectedService,setSelectedService]=useState("");
+  const [loading,setLoading]=useState(false);
+
 
 
   const handleServiceChange=(value)=>{
@@ -39,25 +40,64 @@ const RegistrationForm = () => {
  
   const handleSubmit=(e)=>{
       e.preventDefault();
+      setLoading(true)
+      emailjs
+        .send(
+          'service_i9mcwnp',
+          'template_navc4y8',
+          {
+            form_name: form.name,
+            to_name: "EL KAFI TRAINING",
+            from_email: form.email,
+            last_name: form.lastName,
+            dob: form.DOB,
+            service: form.service,
+            address: form.address,
+          },
+          '5_8eoHPj5GL7i6Ivp'
+          
+        )
+        .then(
+          ()=>{
+            setLoading(false)
+            alert("Thank you. I will get back to you as soon as possible.")
 
-      console.log("form values:", form);
-      console.log("selected service", selectedService)
+            setForm({
+              name:"",
+              lastName:"",
+              email:"",
+              DOB:"",
+              address:"",
+              service:"",
+            })
+          },
+          (error)=>{
+            setLoading(false);
+            console.error(error);
 
-      if(form.name && form.lastName && form.DOB && form.address && form.email && selectedService){
+            alert('try again')
+          }
+        )
+      
+
+
+      /*if(form.name && form.lastName && form.DOB && form.address && form.email && selectedService){
         console.log("!التسجيل بنجاح")
       }else{
         console.log(".يرجى ملء جميع الحقول المطلوبة")
-      }
+      }*/
   }
 
   
 
   return (
-    <div className='flex flex-col my-[180px] text-right justify-center items-center '>
+    <div className='flex flex-col justify-center items-center my-[180px] text-right   '>
+     <h2 className={`${styles.sectionHeadText} mb-2` }>تعجبك مؤسستنا و تريد التسجيل ؟</h2>
+      <h3 className={`${styles.titles} mb-3 text-[#444444]`}>يرجى ملء جميع الحقول المطلوبة</h3>
       <form 
       ref={formRef}
       onSubmit={handleSubmit}
-      className="w-full max-w-lg">
+      className="w-full max-w-lg border-lg  rounded shadow shadow-md  p-10">
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label className="block   text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
@@ -92,7 +132,7 @@ const RegistrationForm = () => {
           </div>
           <div className="relative max-w-sm ml-auto">
             <div className="absolute inset-y-0 right-0 flex items-center pr-3.5 pointer-events-none">
-              <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" >
                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
               </svg>
             </div>
@@ -101,7 +141,7 @@ const RegistrationForm = () => {
                 required  
                 type="text" 
                 name='DOB'
-                value={form.DOB}
+                value={form.DOB ? dayjs(form.DOB).format("YYYY-MM-DD") : null }
                 onChange={(date)=>handleInputChange({target:{name:'DOB',value:date.format("YYYY-MM-DD")}})}
                 className="text-right bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pr-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
                 placeholder="حدد تاريخ ميلاد"
@@ -247,8 +287,8 @@ const RegistrationForm = () => {
         
         <button 
           type='submit'
-          className='border border-[#615dcf] hover:bg-[#5928E5] hover:text-white text-[#5928E5] font-bold py-3 px-5 my-5 rounded'>
-        تسجيل
+          className='border border-[#61b95f]  hover:bg-[#04C200] hover:text-white text-[#04C200] font-bold py-3 px-5 my-5 rounded'>
+          {loading ?' يرجى الانتظار ': 'تسجيل'} 
         </button>
 
 
@@ -256,7 +296,10 @@ const RegistrationForm = () => {
        
 </form>
     </div>
+    
+
   )
+
 }
 
 export default RegistrationForm;

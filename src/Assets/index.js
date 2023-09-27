@@ -9,6 +9,8 @@ import pic2 from "./coursParticulier/pic2.jpg";
 import formMedic from "./coursParticulier/formMedic.jpg"
 import  academic from "./landingPage/4212914_board_classroom_education_teacher_icon.svg";
 import medical from "./landingPage/5929159_avatar_doctor_health_hospital_medical_icon.svg"
+import bgCourPart from "./coursParticulier/bg-heroCour.svg";
+import guyStudying from "./coursParticulier/guy.svg"
 
 export{
     logo,
@@ -21,5 +23,7 @@ export{
     pic2,
     formMedic,
     academic,
-    medical
+    medical,
+    bgCourPart,
+    guyStudying
 }

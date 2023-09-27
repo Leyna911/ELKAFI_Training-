@@ -17,7 +17,7 @@ export const navLinks = [
     },
     {
         id:"acceuil", 
-        title:"ترحيب"
+        title:"الرئيسية"
     }
 ];
 
@@ -126,4 +126,90 @@ export const services =[
         sectionId:'coursParticuliers'
         
     }
+]
+
+export const pricesBEM =[
+    {
+        id:'p1',
+        title:'	"السنة الرابعة متوسط "مواد أساسية ',
+        prix:"2000",
+        plans:[
+            'math: 2000DA',
+            'physique: 2000DA',
+        ]
+    },
+    {
+        id:'p1',
+        title:'	السنة الرابعة متوسط',
+        prix:"2000",
+        plans:[
+            'francais: 2000DA',
+            'anglais: 2000DA',
+        ]
+    },
+    {
+        id:'p1',
+        title:'	السنة الرابعة متوسط',
+        prix:"2000",
+        plans:[
+            'math: 2000DA',
+            'physique: 2000DA',
+        ]
+    }
+]
+
+
+export const pricesBAC =[
+    {
+        id:'p1',
+        title:'"الأقسام النهائية "مواد أساسية' ,
+        prix:"2000",
+        plans:[
+            '2000DA :	رياضيات ',
+            '2000DA :	فيزياء  ',
+            '2000DA :	أدب عربي  ',
+            '2000DA :هندسة ميكانيكية  ',
+            '2000DA :	هندسة مدنية  ',
+            '2000DA :	هندسة كهربائية  ',
+        ]
+    },
+    {
+        id:'p1',
+        title:'"الأقسام النهائية "مواد ثانوية ',
+        prix:"2000",
+        plans:[
+            '2000DA :	تاريخ و جغرافيا  ',
+        ]
+    },
+    {
+        id:'p1',
+        title:'"الأقسام النهائية "لغات ',
+        prix:"2000",
+        plans:[
+            '2000DA :	انجليزية ',
+            '2000DA :	فرنسية  ',
+        ]
+    }
+]
+
+
+export const prices2CEM =[
+    {
+        id:'p1',
+        title:'	"السنة الثانية متوسط "مواد أساسية ',
+        prix:"2000",
+        plans:[
+            '500DA :	رياضيات ',
+        ]
+    },
+    {
+        id:'p1',
+        title:'	"السنة الثانية متوسط "مواد ثانوية',
+        prix:"2000",
+        plans:[
+            '500DA :	فيزياء  ',
+
+        ]
+    },
+    
 ]

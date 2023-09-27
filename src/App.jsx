@@ -4,7 +4,8 @@ import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/Pages/LandingPage";
 import { Footer } from "./Components";
 import RegistrationPage from "./Components/Pages/RegistrationPage";
-
+import CoursParticulierPage from "./Components/Pages/CoursParticulierPage";
+import FormationPage from "./Components/Pages/FormationPage";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="registrationPage" element={<RegistrationPage/>}/>
+        <Route path="coursParticulierPage" element={<CoursParticulierPage/>}/>
+        <Route path="formationPage" element={<FormationPage/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

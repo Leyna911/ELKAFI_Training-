@@ -5,9 +5,15 @@ import { styles } from '../styles';
 import { navLinks } from '../Constants';
 import {logo,menu,close} from "../Assets"
 
+import { useNavigate } from 'react-router-dom';
+
 const NavBar = () => {
     const [active,setActive]=useState('');
     const [toggle, setToggle] = useState(false);
+
+    const navigate = useNavigate();
+
+    
 
   const handleScrollSection =(sectionId)=>{
     setActive(sectionId);
@@ -29,7 +35,17 @@ const NavBar = () => {
                 : "text-secondary"
               } hover:text-tertiary text-[18px]
               font-medium cursor-pointer`}
-              onClick={()=>handleScrollSection(link.id)}
+              onClick={()=>{
+                setToggle(!toggle);
+                if(link.title === 'دروس الدعم'){
+                  navigate('/coursParticulierPage')
+                }else if (link.title === 'تدريب احترافي'){
+                  navigate('/formationPage')
+                }else{
+                  navigate('/')
+                }
+                
+              }}
             >
               {link.title}
             </li>
@@ -62,8 +78,14 @@ const NavBar = () => {
                       active === link.title && toggle ? 'text-white':'text-secondary'
                     } font-poppins font-medium cursor-pointer text-[16px]`}
                     onClick={()=>{
-                      handleScrollSection(link.id)
                       setToggle(!toggle);
+                      if(link.title === 'دروس الدعم'){
+                        navigate('/coursParticulierPage')
+                      }else if (link.title === 'تدريب احترافي'){
+                        navigate('/formationPage')
+                      }else{
+                        navigate('/')
+                      }
                       
                     }}
                   >

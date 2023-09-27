@@ -13,17 +13,18 @@ const Hero = () => {
       </div>
       <div className='text-right ' >
         <div className='sm:w-[300px] md:w-[500px]  '>
-          <h1 className={`${styles.herHeadText} text-black capitalize `}>
+          <h1 className={`${styles.herHeadText} text-black  `}>
            استكشف عالمًا من<span className='text-[#270092]'> المعرفة   </span> الطبية والتعليمية
           </h1>
         </div>
         <div className=' w-[500px]'>
-          <p className={`${styles.herSubText} mt-2 text-black-100 capitalize `}>
-          اكتشف التدريب الطبي المتطور والدورات الأكاديمية التي تتكيف مع جميع المستويات.
+          <p className={`${styles.herSubText} mt-2 text-black-100  `}>
+          اكتشف التدريب الطبي المتطور والدورات الأكاديمية التي تتكيف
+           مع جميع المستويات
           </p>
         </div>
         <div className='flex flex-row justify-end gap-3'>  
-          <HashLink to="/resultPage#contactSection" smooth>
+          <HashLink to="/registrationPage" smooth>
             <button  
             className="bg-[#928FFF] hover:bg-[#5928E5] text-white font-bold py-3 px-5 my-5 rounded-full" 
             >

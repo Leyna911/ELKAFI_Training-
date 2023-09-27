@@ -1,6 +1,6 @@
 const styles ={
     herHeadText:
-    "font-black text-black lg:text-[40px] sm:text-[25px] xs:text-[30px] text-[40px]  mt-0",
+    "font-black text-black lg:text-[50px] sm:text-[25px] xs:text-[30px] text-[40px]  mt-0",
     herSubText: 
     "text-[#222222] font-medium lg:text-[18px] sm:text-[24px] xs:text-[18px] text-[16px] lg:leading-[28px]",
 
