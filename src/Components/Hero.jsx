@@ -1,40 +1,48 @@
 import React from 'react'
 import { HashLink } from 'react-router-hash-link'
-import { hero } from '../Assets'
 import { styles } from '../styles'
-
+import ImagesCarousel from './ImagesCarousel'
 
 const Hero = () => {
   return (
-    <section className='relative flex xl:flex-row flex-col  justify-center items-center gap-10 '>
-      
-      <div className='flex  md:w-[600px] xs:w-[200] '>
-        <img src={hero} alt='hero'/>
-      </div>
-      <div className='text-right ' >
+    <section className='relative bg-gradient-to-r from-purple-700 to-indigo-600 py-24 w-full h-auto       '>
+
+      <div className='flex flex-col justify-center text-center items-center ' >
         <div className='sm:w-[300px] md:w-[500px]  '>
-          <h1 className={`${styles.herHeadText} text-black  `}>
-           استكشف عالمًا من<span className='text-[#270092]'> المعرفة   </span> الطبية والتعليمية
+          <h1 className={`${styles.herHeadText} text-white  `}>
+           استكشف عالمًا من المعرفة  الطبية والتعليمية
           </h1>
         </div>
         <div className=' w-[500px]'>
-          <p className={`${styles.herSubText} mt-2 text-black-100  `}>
+          <p className={`${styles.herSubText} mt-2 text-white  `}>
           اكتشف التدريب الطبي المتطور والدورات الأكاديمية التي تتكيف
            مع جميع المستويات
           </p>
         </div>
         <div className='flex flex-row justify-end gap-3'>  
           <HashLink to="/registrationPage" smooth>
-            <button  
-            className="bg-[#928FFF] hover:bg-[#5928E5] text-white font-bold py-3 px-5 my-5 rounded-full" 
-            >
-                
-                <svg  className='inline-block mr-2' viewBox="0 0 16 16" width="16" height="16" stroke="currentColor" fill="currentColor"><path d="M7.3 13.1a0.4 0.4 0 1 0 0.6-0.6l-5-4.5h11.1a0.4 0.4 0 0 0 0-0.8H2.9l5-4.5a0.4 0.4 0 0 0-0.6-0.6L1.8 7.2a0.6 0.6 0 0 0-0.2 0.5 0.6 0.6 0 0 0 0.2 0.3l5.5 5.1Z"  /></svg>
-                تسجيل
-            </button>
+            <button
+              className="bg-[#FDC403] hover:bg-[#5928E5] text-black font-bold py-3 px-4 my-5 rounded-full text-[20px] flex items-center"
+              >
+              <div className="flex items-center">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  stroke="currentColor"
+                  fill="currentColor"
+                >
+                  <path d="M11 19.6a0.6 0.6 0 1 0 0.8-0.8l-7.4-6.8h16.6a0.6 0.6 0 0 0 0-1.2H4.4l7.4-6.8a0.6 0.6 0 0 0-0.8-0.8L2.7 10.7a0.9 0.9 0 0 0-0.3 0.8 0.9 0.9 0 0 0 0.3 0.6l8.3 7.5Z" />
+                </svg>
+                <span className="ml-2">تسجيل</span>
+              </div>
+        </button>
+
                 
             </HashLink>
-          
+        </div >
+        <div className='mt-6'>
+          <ImagesCarousel/>
         </div>
       </div>
     </section>

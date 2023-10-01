@@ -106,6 +106,13 @@ export const cardInfosCours = [
         text:"مدة التكوين : ورشة لمدة يومين ",
         tutor:"Mehdi Bouhenna "
     },
+    {
+        id:'4',
+        pic:formMedic,
+        title:"	التكوين في العناية بالمرضى ",
+        text:"مدة التكوين : ورشة لمدة يومين ",
+        tutor:"Mehdi Bouhenna "
+    },
  
 ]
 
@@ -134,28 +141,11 @@ export const pricesBEM =[
         title:'	"السنة الرابعة متوسط "مواد أساسية ',
         prix:"2000",
         plans:[
-            'math: 2000DA',
-            'physique: 2000DA',
+            '2000DA :	رياضيات ',
+            '2000DA :	فيزياء  ',
+            '2000DA :	أدب عربي  ',
         ]
     },
-    {
-        id:'p1',
-        title:'	السنة الرابعة متوسط',
-        prix:"2000",
-        plans:[
-            'francais: 2000DA',
-            'anglais: 2000DA',
-        ]
-    },
-    {
-        id:'p1',
-        title:'	السنة الرابعة متوسط',
-        prix:"2000",
-        plans:[
-            'math: 2000DA',
-            'physique: 2000DA',
-        ]
-    }
 ]
 
 

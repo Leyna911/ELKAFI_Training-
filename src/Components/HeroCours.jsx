@@ -21,10 +21,12 @@ const HeroCours = () => {
               <svg  className='inline-block mr-2 ' viewBox="0 0 16 16" width="16" height="16" stroke="currentColor" fill="currentColor"><path d="M7.3 13.1a0.4 0.4 0 1 0 0.6-0.6l-5-4.5h11.1a0.4 0.4 0 0 0 0-0.8H2.9l5-4.5a0.4 0.4 0 0 0-0.6-0.6L1.8 7.2a0.6 0.6 0 0 0-0.2 0.5 0.6 0.6 0 0 0 0.2 0.3l5.5 5.1Z"  /></svg>
               تسجيل  في دروس الدعم
             </button>     
-            </HashLink>
-          
+            </HashLink>  
         </div>
-  
+        <div className='w-[256px] h-auto'>
+          <img src={guyStudying}/>
+        </div>
+       
         </div>
     </div>
   )

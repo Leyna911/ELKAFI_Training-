@@ -21,19 +21,15 @@ const NavBar = () => {
   }
 
   return (
-    <nav className={`${styles.paddingX} w-full items-center py-5 fixed top-0 z-20 bg-primary`}>
+    <nav className={`${styles.paddingX} w-full items-center py-5 fixed top-0 z-20 bg-gradient-to-r from-purple-700 to-indigo-600`}>
 
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
+      <div className='w-full flex justify-between items-center max-w-7xl mx-auto relative '>
         
         <ul className='list-none hidden sm:flex flex-row gap-14 ml-12'>
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
-                active === link.id
-                ? "text-tertiary"
-                : "text-secondary"
-              } hover:text-tertiary text-[18px]
+              className={`text-primary text-[18px]
               font-medium cursor-pointer`}
               onClick={()=>{
                 setToggle(!toggle);
@@ -80,7 +76,7 @@ const NavBar = () => {
                     onClick={()=>{
                       setToggle(!toggle);
                       if(link.title === 'دروس الدعم'){
-                        navigate('/coursParticulierPage')
+                        navigate('/coursParticulierPage#herocours')
                       }else if (link.title === 'تدريب احترافي'){
                         navigate('/formationPage')
                       }else{
@@ -96,9 +92,8 @@ const NavBar = () => {
               </ul>
            </div>
         </div>
-
+       
       </div>
-        
     </nav>
    
   )

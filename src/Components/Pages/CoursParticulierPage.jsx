@@ -7,7 +7,7 @@ import Formations from '../Formations'
 const CoursParticulierPage = () => {
   return (
     <div>
-      <section className='py-20'>
+      <section id='herocours' className='py-20'>
         <HeroCours/>
       </section>
       <section>
