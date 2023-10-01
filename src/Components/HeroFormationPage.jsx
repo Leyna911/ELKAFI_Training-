@@ -11,7 +11,7 @@ const HeroFormationPage = () => {
     <div className='mt-20'>
         <div className='flex md:flex-row flex-col    gap-5 '>
             <div className='md:w-[700px]  h-auto rounded rounded-lg  '>
-                <img src={pic21}/>
+                <img src={pic21} alt='hero-pic' loading='lazy'/>
             </div>
             <div className='flex flex-col md:w-[600px] w-[395px]  text-right        '>
                 <h3 className={`flex    text-[#1A1A1A] font-black md:text-[38px] sm:text-[40px] xs:text-[40px] text-[30px]   `}> أدرج مهارة جديدة في سيرتك الذاتية واحصل على وظيفة </h3>

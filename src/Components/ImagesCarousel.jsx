@@ -12,7 +12,7 @@ const ImagesCarousel = () => {
         <div className='max-w-sm '>
             <CarouselForImages>
                 {slides.map((slide)=>(
-                    <img src={slide}/>
+                    <img src={slide} alt='slide'  loading='lazy'/>
                 ))
                 } 
             </CarouselForImages>

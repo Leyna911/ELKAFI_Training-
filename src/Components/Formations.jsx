@@ -54,7 +54,7 @@ const Formations = () => {
         {cardInfos.map((info)=>(
         <div className='ml-2 mr-2 '>
           <div className=" max-w-sm h-[500px] border rounded  rounded-lg overflow-hidden shadow-lg hover:drop-shadow-2xl hover:brighteness-150 duration-300 ease-in-out">
-              <img className="w-full " src={info.pic} alt={info.title} />     
+              <img className="w-full " src={info.pic} alt={info.title} loading='lazy'/>     
               <div className="px-6 py-4">
                   <h5 className="font-bold text-[#1A1A1A] text-xl mb-2">{info.title}</h5>
                   <p className="text-gray-700 text-base">{info.text}</p>

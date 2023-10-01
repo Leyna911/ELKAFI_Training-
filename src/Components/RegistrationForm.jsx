@@ -84,7 +84,7 @@ const RegistrationForm = () => {
       /*if(form.name && form.lastName && form.DOB && form.address && form.email && selectedService){
         console.log("!التسجيل بنجاح")
       }else{
-        console.log(".يرجى ملء جميع الحقول المطلوبة")
+        console.log(".يرجى ملء جميع الحقول ")
       }*/
   }
 

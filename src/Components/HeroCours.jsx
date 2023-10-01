@@ -24,7 +24,7 @@ const HeroCours = () => {
             </HashLink>  
            </div>
         <div className='w-[256px] h-auto mt-[-20px]'>
-          <img src={guyStudying}/>
+          <img src={guyStudying} alt='guy-Studying' loading='lazy'/>
         </div>
        
         </div>

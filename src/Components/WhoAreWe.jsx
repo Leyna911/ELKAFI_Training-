@@ -23,7 +23,7 @@ const WhoAreWe = () => {
       <div className='flex   sm:flex-row flex-col justify-center items-center mt-10 gap-10'>
           {services.map((service)=>(
             <div className='flex flex-col  items-center  '>
-              <div className='flex items-center justify-center w-[100px] h-[100px] bg-[#f0f0f0] rounded-full '><img src={service.icon} className='w-3/4 h-auto '/></div>
+              <div className='flex items-center justify-center w-[100px] h-[100px] bg-[#f0f0f0] rounded-full '><img src={service.icon} className='w-3/4 h-auto ' loading='lazy'/></div>
               <h3 className={`${styles.titles} w-[250px] flex text-center  `}>{service.title}</h3>
               <div>    
                
