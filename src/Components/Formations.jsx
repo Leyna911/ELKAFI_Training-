@@ -49,7 +49,7 @@ const Formations = () => {
     <div>
        <style>{customCarouselStyles}</style>
     
-    
+      
         <Carousel responsive={responsive}>
         {cardInfos.map((info)=>(
         <div className='ml-2 mr-2 '>

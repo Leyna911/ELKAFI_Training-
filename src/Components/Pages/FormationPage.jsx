@@ -2,14 +2,22 @@ import React from 'react'
 
 import { styles } from '../../styles'
 import CoursParticuliers from "../CoursParticuliers"
+import HeroFormationPage from '../HeroFormationPage'
+
 
 const FormationPage = () => {
   return (
-    <div className='py-20'>
-      <h3 className={`flex  text-right w-[800px] text-[#1A1A1A] font-black md:text-[38px] sm:text-[40px] xs:text-[40px] text-[30px]   `}> .أدرج مهارة جديدة في سيرتك الذاتية واحصل على وظيفة </h3>
-      <div>
+    <div>
+      <section id='heroFormationPage'>
+        <HeroFormationPage/>
+      </section>
+      <section >
+        <div className='flex flex-col justify-center items-center mt-20'>
+          <h1 className={`${styles.sectionHeadText} `} > الدورات المتوفرة  </h1>
+        </div>
         <CoursParticuliers/>
-      </div>
+      </section>
+      
     </div>
     
   )

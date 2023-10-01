@@ -17,7 +17,7 @@ const PrixCours = () => {
       <div className='flex flex-col justify-center items-center '>
         <h1 className={`${styles.sectionHeadText}`}>اكتشف خطة الدفع لدينا</h1>
       </div >
-      <div className='flex flex-row justify-center items-center gap-5 mt-5'>
+      <div className='flex md:flex-row  flex-col  justify-center items-center md:gap-5 gap-2 mt-5'>
         <button 
         type="button" 
         id='bem'
@@ -60,7 +60,7 @@ const PrixCours = () => {
                 <div class="flex items-baseline text-gray-900 dark:text-white">
                     <span class="text-3xl font-semibold">DZD</span>
                     <span class="text-5xl font-extrabold tracking-tight">2000</span>
-                    <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+                    <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/شهر</span>
                 </div>
                 <ul role="list" class="space-y-5 my-7">
                   {plan.plans.map((module,index)=>(
@@ -151,5 +151,3 @@ const PrixCours = () => {
 
 export default SectionWrapper(PrixCours,"")
 
-/*
- */

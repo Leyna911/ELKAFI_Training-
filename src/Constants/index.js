@@ -1,4 +1,4 @@
-import { pic1 } from "../Assets";
+import { pic1, pic10, pic3, pic4,pic12,pic5,pic6,pic7,pic8,pic9 } from "../Assets";
 import { pic2 } from "../Assets";
 import { formMedic } from "../Assets";
 import { academic } from "../Assets";
@@ -17,7 +17,7 @@ export const navLinks = [
     },
     {
         id:"acceuil", 
-        title:"الرئيسية"
+        title:"الصفحة الرئيسية"
     }
 ];
 
@@ -90,28 +90,32 @@ export const cardInfosCours = [
         pic:formMedic,
         title:"	التكوين في الحجامة ",
         text:"مدة التكوين : أسبوع حضوري زائد ست أشهر متابعة شخصية تتخللها عدة ورشات تكوينية ",
-        tutor:"Lazhar Boudchicha "
+        tutor:"Mahdi Bouhenna ",
+        proffes:"Phd médecine de sport "
     },
     {
         id:'2',
         pic:formMedic,
         title:"التكوين في الإصابات الرياضية ",
         text:"مدة التكوين  : ثلاث أشهر نظري تطبيقي ",
-        tutor:"Mehdi Bouhenna "
+        tutor:"Mahdi Bouhenna ",
+        proffes:"Phd médecine de sport "
     },
     {
         id:'3',
         pic:formMedic,
         title:"	'التكوين في الإسعافات الأولية  'مسعف في كل عائلة ",
         text:"مدة التكوين : ورشة لمدة يومين ",
-        tutor:"Mehdi Bouhenna "
+        tutor:"Mahdi Bouhenna ",
+        proffes:"Phd médecine de sport "
     },
     {
         id:'4',
         pic:formMedic,
         title:"	التكوين في العناية بالمرضى ",
-        text:"مدة التكوين : ورشة لمدة يومين ",
-        tutor:"Mehdi Bouhenna "
+        text:"مدة التكوين : شهر نظري + 6 أشهر متابعة شخصية ",
+        tutor:"Mahdi Bouhenna ",
+        proffes:"Phd médecine de sport "
     },
  
 ]
@@ -122,7 +126,8 @@ export const services =[
         icon:academic,
         title:"دروس خصوصية لمختلف المستويات",
         btn: "اكتشف دروسنا الخصوصية",
-        sectionId:'formations'
+        sectionId:'formations',
+     
       
     },
     {
@@ -130,7 +135,8 @@ export const services =[
         icon:medical,
         title:"التدريب المهني مع تسليم الشهادة",
         btn:" اكتشف دوراتنا التدريبية المهنية",
-        sectionId:'coursParticuliers'
+        sectionId:'coursParticuliers',
+       
         
     }
 ]
@@ -141,9 +147,9 @@ export const pricesBEM =[
         title:'	"السنة الرابعة متوسط "مواد أساسية ',
         prix:"2000",
         plans:[
-            '2000DA :	رياضيات ',
-            '2000DA :	فيزياء  ',
-            '2000DA :	أدب عربي  ',
+            'رياضيات ',
+            'فيزياء  ',
+            'أدب عربي  ',
         ]
     },
 ]
@@ -155,12 +161,12 @@ export const pricesBAC =[
         title:'"الأقسام النهائية "مواد أساسية' ,
         prix:"2000",
         plans:[
-            '2000DA :	رياضيات ',
-            '2000DA :	فيزياء  ',
-            '2000DA :	أدب عربي  ',
-            '2000DA :هندسة ميكانيكية  ',
-            '2000DA :	هندسة مدنية  ',
-            '2000DA :	هندسة كهربائية  ',
+            'رياضيات ',
+            'فيزياء  ',
+            'أدب عربي  ',
+            'هندسة ميكانيكية  ',
+            'هندسة مدنية  ',
+            'هندسة كهربائية  ',
         ]
     },
     {
@@ -168,7 +174,7 @@ export const pricesBAC =[
         title:'"الأقسام النهائية "مواد ثانوية ',
         prix:"2000",
         plans:[
-            '2000DA :	تاريخ و جغرافيا  ',
+            '	تاريخ و جغرافيا  ',
         ]
     },
     {
@@ -176,8 +182,8 @@ export const pricesBAC =[
         title:'"الأقسام النهائية "لغات ',
         prix:"2000",
         plans:[
-            '2000DA :	انجليزية ',
-            '2000DA :	فرنسية  ',
+            '	انجليزية ',
+            'فرنسية  ',
         ]
     }
 ]
@@ -189,7 +195,7 @@ export const prices2CEM =[
         title:'	"السنة الثانية متوسط "مواد أساسية ',
         prix:"2000",
         plans:[
-            '500DA :	رياضيات ',
+            'رياضيات ',
         ]
     },
     {
@@ -197,9 +203,40 @@ export const prices2CEM =[
         title:'	"السنة الثانية متوسط "مواد ثانوية',
         prix:"2000",
         plans:[
-            '500DA :	فيزياء  ',
+            'فيزياء  ',
 
         ]
     },
     
+]
+
+export const imgHero=[
+    {
+        id:1,
+        img:pic10,
+    },
+    {
+        id:2,
+        img:pic4,
+    },
+    {
+        id:3,
+        img:pic3,
+    },
+    {
+        id:4,
+        img:pic5,
+    },
+    {
+        id:5,
+        img:pic6,
+    },
+    {
+        id:6,
+        img:pic7,
+    },
+    {
+        id:7,
+        img:pic8,
+    },
 ]

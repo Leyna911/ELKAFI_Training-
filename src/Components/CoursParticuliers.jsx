@@ -1,6 +1,6 @@
 import React from 'react'
 import { cardInfosCours } from '../Constants';
-import { styles } from '../styles';
+
 import { SectionWrapper } from '../HOC';
 import Carousel from 'react-multi-carousel';
 
@@ -48,9 +48,7 @@ const CoursParticuliers = () => {
   return (
     <div>
       <style>{customCarouselStyles}</style>
-      <div className='flex flex-col justify-center items-center'>
-        <h1 className={`${styles.sectionHeadText} `} >اكتسب الثقة وازدهر بجانب الخبراء </h1>
-      </div>
+      
      
       <Carousel responsive={responsive}>
           {cardInfosCours.map((info)=>
@@ -63,7 +61,7 @@ const CoursParticuliers = () => {
                           <img className="rounded-full w-9 h-9" src={info.pic} alt="profile picture"/>
                           <div className="space-y-0.5 font-medium dark:text-white text-left">
                               <div>{info.tutor}</div>
-                              <div className="text-sm text-gray-500 dark:text-gray-400">Developer at Open AI</div>
+                              <div className="text-sm text-gray-500 dark:text-gray-400">{info.proffes}</div>
                           </div>
                       </figcaption>    
                     </figure>
