@@ -1,4 +1,4 @@
-import { pic1, pic10, pic3, pic4,pic12,pic5,pic6,pic7,pic8,pic9 } from "../Assets";
+import { pic1, pic10, pic3, pic4,pic5,pic6,pic7,pic8 } from "../Assets";
 import { pic2 } from "../Assets";
 import { formMedic } from "../Assets";
 import { academic } from "../Assets";
@@ -23,14 +23,14 @@ export const navLinks = [
 
 export const cardInfos = [
     {
-        id:'cardne',
+        id:1,
         pic:pic1,
         title:"دروس الدعم",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
         
     },
     {
-        id:'cardwo',
+        id:2,
         pic:pic1,
         title:"السنة الرابعة متوسط BEM",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
@@ -41,7 +41,7 @@ export const cardInfos = [
         
     },
     {
-        id:'cardhree',
+        id:3,
         pic:pic2,
         title:"السنة الثانية متوسط",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
@@ -52,7 +52,7 @@ export const cardInfos = [
         
     },
     {
-        id:'cardour',
+        id:4,
         pic:pic1,
         title:"الأقسام النهائية BAC",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
@@ -70,7 +70,7 @@ export const cardInfos = [
         
     },
     {
-        id:'cardfive',
+        id:5,
         pic:pic2,
         title:"لغات ",
         text:"المؤسسة متخصصة في تعليم اللغات حيث توفر برامج تعليمية عالمية موجهة لكل الأعمار و الفئات ابتداءا من 6 سنوات التحضير لشهادات عالمية تحت اشراف أساتذة ذو خبرة في التدريس و بعدة طرق" ,       

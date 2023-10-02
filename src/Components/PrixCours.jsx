@@ -62,7 +62,7 @@ const PrixCours = () => {
                     <span class="text-5xl font-extrabold tracking-tight">2000</span>
                     <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/شهر</span>
                 </div>
-                <ul role="list" class="space-y-5 my-7">
+                <ul  class="space-y-5 my-7">
                   {plan.plans.map((module,index)=>(
                     <div key={index} >
                         <li class="flex space-x-3 items-center">
@@ -93,7 +93,7 @@ const PrixCours = () => {
                   <span class="text-5xl font-extrabold tracking-tight">2000</span>
                   <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
               </div>
-              <ul role="list" class="space-y-5 my-7">
+              <ul  class="space-y-5 my-7">
                 {plan.plans.map((module,index)=>(
                   <div key={index} >
                       <li class="flex space-x-3 items-center">
@@ -124,7 +124,7 @@ const PrixCours = () => {
                   <span class="text-5xl font-extrabold tracking-tight">2000</span>
                   <span class="ml-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
               </div>
-              <ul role="list" class="space-y-5 my-7">
+              <ul  class="space-y-5 my-7">
                 {plan.plans.map((module,index)=>(
                   <div key={index} >
                       <li class="flex space-x-3 items-center">

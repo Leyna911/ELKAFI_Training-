@@ -60,7 +60,7 @@ const RegistrationForm = () => {
         .then(
           ()=>{
             setLoading(false)
-            alert("Thank you. I will get back to you as soon as possible.")
+            alert("! تم التسجيل بنجاح ")
 
             setForm({
               name:"",
@@ -226,7 +226,7 @@ const RegistrationForm = () => {
            
 
         </div>
-        {selectedService == 'formation-select' && (
+        {selectedService === 'formation-select' && (
            <div className='text-right mb-6'>       
            <label className="service-select block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	التكوين </label>
            <select 
@@ -242,7 +242,7 @@ const RegistrationForm = () => {
        </div>  
         )}
         
-        {selectedService == 'courpart-select' && (
+        {selectedService === 'courpart-select' && (
             <div className='text-right mb-6'>       
             <label className="service-select  block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	درس خصوصي </label>
             <select
@@ -269,7 +269,7 @@ const RegistrationForm = () => {
         </div> 
         )}
          
-          {selectedService == 'langues-select' && (
+          {selectedService === 'langues-select' && (
                <div className='text-right mb-6 '>       
                <label className="service-select  block mb-2 text-sm font-medium text-gray-900 dark:text-white">إختر	دورات لغة </label>
                <select 

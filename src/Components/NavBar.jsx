@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
-import { scrollToSection } from '../utils/motion';
+
 import { styles } from '../styles';
 import { navLinks } from '../Constants';
 import {logo,menu,close} from "../Assets"

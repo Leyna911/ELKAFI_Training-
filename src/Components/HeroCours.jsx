@@ -1,5 +1,5 @@
 import React from 'react'
-import { bgCourPart } from '../Assets'
+
 import { styles } from '../styles'
 import { guyStudying } from '../Assets'
 import { HashLink } from 'react-router-hash-link'

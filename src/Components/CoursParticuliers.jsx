@@ -52,13 +52,13 @@ const CoursParticuliers = () => {
      
       <Carousel responsive={responsive}>
           {cardInfosCours.map((info)=>
-                    <figure className="flex flex-col h-[240px]  items-center justify-center p-3 mx-2 rounded text-center bg-white border-b  drop-shadow-xl  dark:bg-[#1c103f] hover:drop-shadow-2xl  hover:brightness-110 transition-all duration-300 ease-in-out ">
+                    <figure key={info.id} className="flex flex-col h-[240px]  items-center justify-center p-3 mx-2 rounded text-center bg-white border-b  drop-shadow-xl  dark:bg-[#1c103f] hover:drop-shadow-2xl  hover:brightness-110 transition-all duration-300 ease-in-out ">
                       <blockquote className=" mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
                           <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{info.title}</h3>
                           <p className="my-4">{info.text}</p>
                       </blockquote>
                       <figcaption className="flex items-center justify-center space-x-3">
-                          <img className="rounded-full w-9 h-9" src={info.pic} alt="profile picture" loading='lazy'/>
+                          <img className="rounded-full w-9 h-9" src={info.pic} alt="profile " loading='lazy'/>
                           <div className="space-y-0.5 font-medium dark:text-white text-left">
                               <div>{info.tutor}</div>
                               <div className="text-sm text-gray-500 dark:text-gray-400">{info.proffes}</div>
