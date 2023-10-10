@@ -1,5 +1,5 @@
 import { pic1, pic10, pic3, pic4,pic5,pic6,pic7,pic8 } from "../Assets";
-import { pic2 } from "../Assets";
+import { pic2,english,math } from "../Assets";
 import { formMedic } from "../Assets";
 import { academic } from "../Assets";
 import { medical } from "../Assets";
@@ -24,7 +24,7 @@ export const navLinks = [
 export const cardInfos = [
     {
         id:1,
-        pic:pic1,
+        pic:english,
         title:"دروس الدعم",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
         
@@ -53,7 +53,7 @@ export const cardInfos = [
     },
     {
         id:4,
-        pic:pic1,
+        pic:math,
         title:"الأقسام النهائية BAC",
         text:"تحسين المستوى  في اللغة الانجليزية للأطفال",
         list:[
@@ -71,7 +71,7 @@ export const cardInfos = [
     },
     {
         id:5,
-        pic:pic2,
+        pic:english,
         title:"لغات ",
         text:"المؤسسة متخصصة في تعليم اللغات حيث توفر برامج تعليمية عالمية موجهة لكل الأعمار و الفئات ابتداءا من 6 سنوات التحضير لشهادات عالمية تحت اشراف أساتذة ذو خبرة في التدريس و بعدة طرق" ,       
         list:[

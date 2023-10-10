@@ -6,14 +6,14 @@ import ImagesCarousel from './ImagesCarousel'
 
 const Hero = () => {
   return (
-    <section className='relative bg-gradient-to-r from-purple-700 to-indigo-600 py-24 w-full h-auto '>
-      <div className='flex flex-col justify-center text-center items-center ' >
-        <div className='sm:w-[300px] md:w-[500px]  '>
+    <section className=' md:w-full  justify-center    bg-gradient-to-r from-purple-700 to-indigo-600 py-24  h-auto '>
+      <div className='flex flex-col  justify-center text-center items-center' >
+        <div className=' md:w-[500px] w-[400px] '>
           <h1 className={`${styles.herHeadText} text-white  `}>
           استكشف عالمًا من المعرفة  الطبية والتعليمية
           </h1>
         </div>
-        <div className=' w-[500px]'>
+        <div className=' md:w-[500px] w-[450px]'>
           <p className={`${styles.herSubText} mt-2 text-white  `}>
           اكتشف التدريب الطبي المتطور والدورات الأكاديمية التي تتكيف
           مع جميع المستويات

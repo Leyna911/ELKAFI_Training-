@@ -19,3 +19,7 @@
         #1300E8
     );
 }
+
+body{
+    overflow-x: hidden;
+}

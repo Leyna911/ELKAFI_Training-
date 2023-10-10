@@ -8,8 +8,8 @@ import { styles } from '../../styles';
 
 const LandingPage = () => {
   return (
-    <div>
-     <section id='acceuil' className='py-20'>
+    <div className=''>
+     <section id='acceuil' className='py-20  '>
         <Hero/>
      </section> 
      <section >
